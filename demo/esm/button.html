@@ -1,0 +1,28 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/entry.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>按需引入Demo</h1>
+    <div id="app"></div>
+    <script type="module">
+      import { createApp } from 'vue/dist/vue.esm-bundler.js'
+      import SmartyUI, { SButton } from '../../dist/smarty-ui.mjs'
+
+      createApp({
+        template: `
+        <SButton>按需引入button</SButton>
+        `
+      })
+        .component(SButton.name, SButton)
+        .mount('#app')
+    </script>
+  </body>
+</html>
